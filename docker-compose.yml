@@ -1,0 +1,30 @@
+# Use root/example as user/password credentials
+version: '3'
+
+volumes:
+    postgresdata:
+networks: 
+  postgres-network:
+      driver: bridge
+
+services:
+
+  postgres:
+      image: postgres
+      restart: always
+      environment:
+          POSTGRES_PASSWORD: f17cdd2570ccba4666d00fc7cc99dc2bd8d51be9dca06d315a07d6a89257e9e4
+
+      ports:
+          - 5432:5432
+      volumes:
+          - postgresdata:/var/lib/postgresql/data
+      networks: 
+        - postgres-network
+  
+  
+  
+  
+    
+ 
+  
